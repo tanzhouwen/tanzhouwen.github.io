@@ -1,0 +1,95 @@
+# Site settings
+title: Tandy Blog
+SEOTitle: Tandy的技术专栏 | Tandy Blog
+header-img: img/post-bg-desk.jpg
+email: tanzhouwen@gmail.com
+description: "无钱莫入众，言轻莫劝人，待到成功后，把酒言初心。"
+keyword: "Tandy, Tandy Blog, Tandy的技术专栏, java"
+url: "http://tanzhouwen.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/tanzhouwen/tanzhouwen.github.io.git" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Goals determine what you going to be!"
+sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# SNS settings
+RSS: false
+# weibo_username:     tanzhouwen
+#zhihu_username:     tanzhouwen
+github_username:    tanzhouwen
+#facebook_username:  tanzhouwen
+#jianshu_username:   tanzhouwen
+#twitter_username:   tanzhouwen
+
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# 评论系统
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: 3a4bfb389c6a0fcb3fb1                            #生成的clientID
+  clientSecret: 41b0df86a1e3e1b418de2faaeb9d45537ea17d35    #生成的clientSecret
+  repo: tanzhouwen.github.io    #仓库名称
+  owner: tanzhouwen    #github用户名
+  admin: tanzhouwen
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+# 统计
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: a26c66e3b1854b67be0796768be55ed6
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+        title: "Java",
+        href: "https://java.com"
+    }
+]
