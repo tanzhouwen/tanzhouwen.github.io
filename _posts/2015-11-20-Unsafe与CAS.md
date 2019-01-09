@@ -19,13 +19,13 @@ grammar_code: true
 >public native long staticFieldOffset(Field paramField);
 
 这个方法可以用来获取给定的paramField的内存地址偏移量，这个值对于给定的field是唯一的且是固定不变的。再比如说：
->public native int arrayBaseOffset(Class paramClass);
+>public native int arrayBaseOffset(Class paramClass);<br>
 >public native int arrayIndexScale(Class paramClass);
 
 前一个方法是用来获取数组第一个元素的偏移地址，后一个方法是用来获取数组的转换因子即数组中元素的增量地址的。最后看三个方法：
->public native long allocateMemory(long paramLong);
->public native long reallocateMemory(long paramLong1, long paramLong2);
->public native void freeMemory(long paramLong);
+>public native long allocateMemory(long paramLong);<br>
+>public native long reallocateMemory(long paramLong1, long paramLong2);<br>
+>public native void freeMemory(long paramLong);<br>
 
 分别用来分配内存，扩充内存和释放内存的。
 
@@ -37,9 +37,9 @@ CAS，Compare and Swap即比较并交换，设计并发算法时常用到的一�
 当前的处理器基本都支持CAS，只不过不同的厂家的实现不一样罢了。CAS有三个操作数：内存值V、旧的预期值A、要修改的值B，当且仅当预期值A和内存值V相同时，将内存值修改为B并返回true，否则什么都不做并返回false。
 
 CAS也是通过Unsafe实现的，看下Unsafe下的三个方法：
->public final native boolean compareAndSwapObject(Object paramObject1, long paramLong, Object paramObject2, Object paramObject3);
->public final native boolean compareAndSwapInt(Object paramObject, long paramLong, int paramInt1, int paramInt2);
->public final native boolean compareAndSwapLong(Object paramObject, long paramLong1, long paramLong2, long paramLong3);
+>public final native boolean compareAndSwapObject(Object paramObject1, long paramLong, Object paramObject2, Object paramObject3);<br>
+>public final native boolean compareAndSwapInt(Object paramObject, long paramLong, int paramInt1, int paramInt2);<br>
+>public final native boolean compareAndSwapLong(Object paramObject, long paramLong1, long paramLong2, long paramLong3);<br>
 
 就拿中间这个比较并交换Int值为例好了，如果我们不用CAS，那么代码大致是这样的：
 ``` java
