@@ -33,6 +33,7 @@ grammar_code: true
 那一块儿内存（图中上边的那一块儿内存）全部回收掉，**现在的商业虚拟机都采用这种收集算法来回收新生代**。
 
 ![](https://raw.githubusercontent.com/tanzhouwen/tanzhouwen.github.io/master/images/jvm-gc-copy.jpg)
+
 ##### 适用场合：
 
  - 存活对象较少的情况下比较高效
@@ -50,6 +51,7 @@ grammar_code: true
 这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。
 
 ![](https://raw.githubusercontent.com/tanzhouwen/tanzhouwen.github.io/master/images/jvm-gc-marker-sort.jpg)
+
 标记-压缩算法是一种老年代的回收算法，它在标记-清除算法的基础上做了一些优化。
 
 首先也需要从根节点开始对所有可达对象做一次标记，但之后，它并不简单地清理未标记的对象，而是将所有的存活对象压缩到内存的一端。之后，清理边界外所有的空间。这种方法既避免了碎片的产生，又不需要两块相同的内存空间，因此，其性价比比较高。
