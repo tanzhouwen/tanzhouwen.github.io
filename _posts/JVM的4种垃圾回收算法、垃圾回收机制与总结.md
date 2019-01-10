@@ -15,7 +15,9 @@ grammar_code: true
 标记-清除算法将垃圾回收分为两个阶段：**标记阶段和清除阶段**。
 
 在标记阶段首先通过**根节点(GC Roots)**，标记所有从根节点开始的对象，未被标记的对象就是未被引用的垃圾对象。然后，在清除阶段，清除所有未被标记的对象。
+
 ![](https://raw.githubusercontent.com/tanzhouwen/tanzhouwen.github.io/master/images/jvm-gc-marker-clear.jpg)
+
 ##### 适用场合：
 
  - 存活对象较多的情况下比较高效
@@ -29,6 +31,7 @@ grammar_code: true
 
 从根节点(GC Roots)进行扫描，标记出所有的存活对象，并将这些存活的对象复制到一块儿新的内存（图中下边的那一块儿内存）上去，之后将原来的
 那一块儿内存（图中上边的那一块儿内存）全部回收掉，**现在的商业虚拟机都采用这种收集算法来回收新生代**。
+
 ![](https://raw.githubusercontent.com/tanzhouwen/tanzhouwen.github.io/master/images/jvm-gc-copy.jpg)
 ##### 适用场合：
 
@@ -45,6 +48,7 @@ grammar_code: true
 复制算法的高效性是建立在存活对象少、垃圾对象多的前提下的。
 
 这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。
+
 ![](https://raw.githubusercontent.com/tanzhouwen/tanzhouwen.github.io/master/images/jvm-gc-marker-sort.jpg)
 标记-压缩算法是一种老年代的回收算法，它在标记-清除算法的基础上做了一些优化。
 
